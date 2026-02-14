@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stellar Particles · Hand Gesture Control</title>
+  <meta name="description" content="Real-time 3D particle system controlled by hand gestures via camera." />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/style.css" />
+
+  <!-- MediaPipe Hands via Local File (Version-matched with assets) -->
+  <script src="/mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="ui-panel">
+      <div>
+        <h1>Stellar Particles</h1>
+        <div class="subtitle">Hand Gesture Control</div>
+      </div>
+
+      <div>
+        <label>Shape</label>
+        <div class="shape-grid">
+          <button class="shape-btn active" data-shape="galaxy" title="Galaxy">🌌</button>
+          <button class="shape-btn" data-shape="heart" title="Heart">❤️</button>
+          <button class="shape-btn" data-shape="saturn" title="Saturn">🪐</button>
+          <button class="shape-btn" data-shape="flower" title="Flower">🌸</button>
+          <button class="shape-btn" data-shape="love" title="I Love You">💖</button>
+        </div>
+      </div>
+
+      <div>
+        <label>Base Color</label>
+        <div class="color-row">
+          <input type="color" id="color-picker" value="#00ffff">
+          <span id="color-hex">#00FFFF</span>
+        </div>
+      </div>
+
+      <div class="footer-row">
+        <button class="secondary" id="fullscreen-btn">⛶ Fullscreen</button>
+      </div>
+    </div>
+
+    <div id="camera-container">
+      <video id="input-video" playsinline muted autoplay></video>
+      <div id="camera-status">Starting...</div>
+    </div>
+
+    <div id="gesture-indicator">
+      <span id="gesture-icon">✋</span>
+      <span id="gesture-text">No Hand</span>
+    </div>
+
+    <canvas id="canvas"></canvas>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
